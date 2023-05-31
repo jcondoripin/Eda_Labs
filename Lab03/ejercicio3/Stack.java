@@ -1,3 +1,4 @@
+package ejercicio3;
 public class Stack<T>{
     private Node<T> top;
     private int length;
@@ -21,6 +22,16 @@ public class Stack<T>{
         return item;
     }
     public int search(Object o) {
-        
+        Node<T> aux = this.top;
+        int pos = 0;
+        while(aux != null && !aux.getData().equals(o)) {
+            aux = aux.getNext();
+            pos++;
+        }
+        if(aux != null) {
+            return pos;
+        }else {
+            return -1;
+        }
     }
 }
