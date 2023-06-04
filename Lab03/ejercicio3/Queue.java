@@ -14,14 +14,27 @@ public class Queue<T>{
         return this.first.getData();
     }
     public T deQueue() {
+        if(isEmpty()) {
+            System.out.println("Queue empty");
+            return null;
+        }
         T data = this.first.getData();
         this.first = this.first.getNext();
+        this.length--;
         return data;
     }
     public void enQueue(T item) {
-        Node<T> newNode = new Node<T>(item);
-        this.last.setNext(newNode);
-        this.last = newNode;
+        if(this.first == null) {
+            this.first = new Node<T>(item);
+            this.last = this.first;
+            
+        }else {
+            Node<T> newNode = new Node<T>(item);
+            this.last.setNext(newNode);
+            this.last = newNode;
+    
+            this.length++;
+        }
     }
     public int search(Object o) {
         Node<T> aux = this.first;
@@ -36,4 +49,19 @@ public class Queue<T>{
             return -1;
         }
     }
+    public boolean isEmpty() {
+        return this.length == 0;
+    }
+
+    @Override
+    public String toString() {
+        String s = "";
+        Node<T> aux = this.first;
+        while(aux != null) {
+            s += aux.getData() + " => ";
+            aux = aux.getNext();
+        }
+        s += "NULL";
+        return s;
+    }   
 }

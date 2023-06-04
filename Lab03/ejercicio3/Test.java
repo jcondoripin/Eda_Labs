@@ -2,19 +2,21 @@ package ejercicio3;
 
 public class Test {
     public static void main(String[] args) {
-        Stack<Integer> myStack = new Stack<>();
-        myStack.push(1);
-        myStack.push(2);
-        myStack.push(3);
-        myStack.push(4);
-        myStack.push(5);
+        Queue<Integer> myQueue = new Queue<>();
+        myQueue.enQueue(1);
+        myQueue.enQueue(2);
+        myQueue.enQueue(3);
+        myQueue.enQueue(4);
+        myQueue.enQueue(5);
 
-        System.out.println(myStack.peek()); // 5
-        System.out.println(myStack.pop()); // 5
+        System.out.println(myQueue);
 
-        System.out.println(myStack.peek()); // 4
-        System.out.println(myStack.empty()); // falst
+        System.out.println(myQueue.getFirst()); // 1
+        System.out.println(myQueue.deQueue()); // 1
 
-        System.out.println(myStack.search(1)); // 0
+        System.out.println(myQueue.getFirst()); // 2
+        System.out.println(myQueue.empty()); // false
+
+        System.out.println(myQueue.search(2)); // 0
     }
 }
