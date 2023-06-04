@@ -44,4 +44,19 @@ public class Stack {
             throw new EmptyStackException();
         }
         return top.getData();
+    }
+
+    //Metodo para buscar un elemento y devolver su indice empieza en 1 (superior)
+    public int search(T element) {
+        int index = 1;
+        Node<T> auxiliar = top;
+        while (auxiliar != null) {
+            if (auxiliar.getData().equals(element)) {
+                return index;
+            }
+            auxiliar = auxiliar.getNext();
+            index++;
+        }
+        return -1;
+    }
 }
