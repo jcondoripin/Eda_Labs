@@ -1,6 +1,8 @@
 package ejercicio2;
 
-public class Stack {
+import java.util.EmptyStackException;
+
+public class Stack<T> {
     private Node<T> top;
     private int size;
 
@@ -46,7 +48,7 @@ public class Stack {
         return top.getData();
     }
 
-    //Metodo para buscar un elemento y devolver su indice empieza en 1 (superior)
+    // Metodo para buscar un elemento y devolver su indice empieza en 1 (superior)
     public int search(T element) {
         int index = 1;
         Node<T> auxiliar = top;
