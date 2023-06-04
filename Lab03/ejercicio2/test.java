@@ -6,6 +6,7 @@ public class test {
         stack.push("A");
         stack.push("B");
         stack.push("C");
+        System.out.println("\t.:Ejecucion:.");
         System.out
                 .println("Tamaño: " + stack.size() + "\n" + "El elemento superior y que se quitara es: " + stack.pop());
         int indicePrueba = stack.search("B");
