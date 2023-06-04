@@ -19,7 +19,7 @@ public class Stack {
     //Insertar un dato en la pila
     public void push(T data) {
         Node<T> newNode = new Node<>(data);
-        newNode.next = top;
+        newNode.setNext(top);
         top = newNode;
         size++;
     }
