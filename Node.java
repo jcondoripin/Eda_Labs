@@ -1,15 +1,15 @@
 package question1;
 
 public class Node <T>{
-    private T valor;
+    private T data;
     private Node next;
 
     public T getValor() {
-        return valor;
+        return data;
     }
 
     public void setValor(T valor) {
-        this.valor = valor;
+        this.data = valor;
     }
 
     public Node getNext() {
@@ -20,11 +20,11 @@ public class Node <T>{
     }
 
     public Node(T valor) {
-        this.valor = valor;
+        this.data = valor;
     }
 
     public Node(T valor, Node next) {
-        this.valor = valor;
+        this.data = valor;
         this.next = next;
     }
 }
