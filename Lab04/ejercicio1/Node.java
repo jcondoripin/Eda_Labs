@@ -2,7 +2,7 @@ package Lab04.ejercicio1;
 
 public class Node <T> {
     private T valor;
-    private Node next;
+    private Node<T> next;
     
     public T getValor() {
     return valor;
@@ -12,16 +12,17 @@ public class Node <T> {
         this.valor = valor;
     }
 
-    public Node getNext() {
+    public Node<T> getNext() {
         return next;
     }
-    public void setNext(Node next) {
+    public void setNext(Node<T> next) {
         this.next = next;
     }
     public Node(T valor) {
         this.valor = valor;
     }
-    public Node(T valor, Node next) {
+    
+    public Node(T valor, Node<T> next) {
         this.valor = valor;
         this.next = next;
     }
