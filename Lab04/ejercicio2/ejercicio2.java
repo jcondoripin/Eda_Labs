@@ -25,4 +25,10 @@ public class ejercicio2 {
         }
     }
 
+    public static void peorCaso(int t, DoubleNodeList<Integer> lista) {
+        for (int i = t; i >= 0; i--) {
+            lista.addNode(i);
+        }
+    }
+
 }
