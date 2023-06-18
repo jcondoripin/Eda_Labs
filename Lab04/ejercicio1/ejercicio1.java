@@ -4,14 +4,14 @@ import java.util.Iterator;
 import java.io.PrintWriter;
 
 public class ejercicio1 {
-    
+
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         PrintWriter archivo = new PrintWriter("insertionTimes.txt");
         System.out.print("Ingresa el tamaño del arreglo: ");
         int n = sc.nextInt();
         ArrayList<NodeList<Integer>> arreglos = new ArrayList<NodeList<Integer>>();
-        for (int i = 0; i < lista_de_nodos.getSize(); i++){
+        for (int i = 0; i < n; i++){ //Imprimira de arriba hacia abajo
             NodeList<Integer> caso = new NodeList<>();
             generarPeorCaso(i, caso);
             arreglos.add(caso);
