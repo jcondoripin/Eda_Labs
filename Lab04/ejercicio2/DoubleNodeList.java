@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 public class DoubleNodeList<E> {
     private Node<E> head;
     private Node<E> tail;
@@ -55,15 +57,22 @@ public class DoubleNodeList<E> {
         return this.size;
     }
 
-    public void removeFirstNode() {
-        if (head != null) {
-            if (head.getNextNode() == null) {
-                head = null;
-                tail = null;
-            } else {
-                head = head.getNextNode();
-                head.setPreviousNode(null);
-            }
+    public void removeFirst() throws Exception {
+        if (head == null) {
+            throw new Exception("Esta lista está vacía");
         }
+
+        Node<E> removedNode = head;
+        head = head.getNextNode();
+
+        if (head != null) {
+            head.setPreviousNode(null);
+        } else {
+            tail = null; // Si la lista quedó vacía
+        }
+
+        removedNode.setNextNode(null);
+
+        size--;
     }
 }
