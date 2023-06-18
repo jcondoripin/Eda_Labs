@@ -1,9 +1,13 @@
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class DoubleNodeList<E> {
     private Node<E> head;
     private Node<E> tail;
     private int size;
+
+    public Node<E> getHead() {
+        return head;
+    }
 
     public DoubleNodeList() {
         this.head = null;
