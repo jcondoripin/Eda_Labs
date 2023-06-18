@@ -54,4 +54,16 @@ public class DoubleNodeList<E> {
     public int size() {
         return this.size;
     }
+
+    public void removeFirstNode() {
+        if (head != null) {
+            if (head.getNextNode() == null) {
+                head = null;
+                tail = null;
+            } else {
+                head = head.getNextNode();
+                head.setPreviousNode(null);
+            }
+        }
+    }
 }
