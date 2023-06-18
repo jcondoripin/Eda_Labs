@@ -1,14 +1,15 @@
 package Lab04.ejercicio1;
 
 public class NodeList<T> {
-    private Node<T> raiz;
+    private Node<T> root;
     private int size = 0;
     
-    public Node<T> getRaiz() {
-        return raiz;
+    public Node<T> getRoot() {
+        return root;
     }
+
     public void setRaiz(Node<T> raiz) {
-        this.raiz = raiz;
+        this.root = raiz;
     }
 
     public int getSize() {
@@ -18,4 +19,12 @@ public class NodeList<T> {
     public void setSize(int size) {
         this.size = size;
     }
+
+    public Node<T> get(int indice) {
+    Node<T> aux=root;
+    for(int i=0;i<indice;i++)
+        aux=aux.getNext();
+    return aux;
+} 
+
 }
