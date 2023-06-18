@@ -25,6 +25,19 @@ public class NodeList<T> {
     for(int i=0;i<indice;i++)
         aux=aux.getNext();
     return aux;
-} 
+    } 
+
+    public void remove(int indice) {
+    if(indice<size) {
+        if(indice==0)
+            root=root.getNext();
+        else {
+            Node<T> anterior=this.get(indice-1);
+            anterior.setNext(this.get(indice+1));
+        }
+        size--;
+    }
+}
+
 
 }
