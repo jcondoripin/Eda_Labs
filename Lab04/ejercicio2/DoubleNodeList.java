@@ -44,7 +44,10 @@ public class DoubleNodeList<E> {
             }
             puntero = puntero.getNextNode();
         }
-
         return false;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
     }
 }
