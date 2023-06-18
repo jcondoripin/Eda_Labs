@@ -28,7 +28,7 @@ public class NodeList<T> {
     } 
 
     public void remove(int indice) {
-    if(indice<size) {
+        if(indice<size) {
         if(indice==0)
             root=root.getNext();
         else {
@@ -36,8 +36,20 @@ public class NodeList<T> {
             anterior.setNext(this.get(indice+1));
         }
         size--;
+        }
     }
-}
-
-
+    
+    public void put(T valor) {
+        if (size == 0) {
+            root = new Node(valor);
+            size++;
+            return;
+        }
+        get(size - 1).setNext(new Node(valor));
+        size++;
+    }
+    
+    public void replace(int indice, T valor) {
+        get(indice).setValor(valor);
+    }
 }
