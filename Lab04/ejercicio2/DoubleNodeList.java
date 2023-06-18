@@ -15,6 +15,21 @@ public class DoubleNodeList<E> {
         this.size = 0;
     }
 
+    public void addNode(E data) {
+        Node<E> newNode = new Node<>(data);
+
+        if (isEmpty()) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.setNextNode(newNode);
+            newNode.setPreviousNode(tail);
+            tail = newNode;
+        }
+
+        size++;
+    }
+
     public void remove(E data) {
         Node<E> puntero = head;
         while (puntero != null) {
