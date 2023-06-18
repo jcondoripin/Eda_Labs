@@ -28,6 +28,10 @@ public class Node<E> {
         this.previousNode = previousNode;
     }
 
+    public void setData(E data) {
+        this.data = data;
+    }
+
     public E getData() {
         return this.data;
     }
