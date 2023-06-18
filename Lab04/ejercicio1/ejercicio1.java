@@ -2,6 +2,7 @@ package Lab04.ejercicio1;
 
 import java.util.*;
 import java.io.IOException;
+import java.util.Iterator;
 import java.io.PrintWriter;
 
 public class ejercicio1 {
@@ -10,30 +11,28 @@ public class ejercicio1 {
         PrintWriter archivo = new PrintWriter("insertionTimes.txt");
         System.out.print("Ingresa el tamaño del arreglo: ");
         int n = sc.nextInt();
-        ArrayList<NodeList> arreglos = new ArrayList<>();
+        ArrayList<NodeList<Integer>> arreglos = new ArrayList<NodeList<Integer>>();
         for (int i = n; i > 0; i--) {
-            NodeList caso = new NodeList<>();
+            NodeList<Integer> caso = new NodeList<>();
             generarPeorCaso(i, caso);
             arreglos.add(caso);
         }
-        Iterator<NodeList> puntero = arreglos.iterator();
-        int i = 0;
+        Iterator<NodeList<Integer>> puntero = arreglos.iterator();
         while (puntero.hasNext()) {
             archivo.println(String.valueOf(insertionSort(puntero.next())));
-            System.out.println(i);
-            i++;
         }
         archivo.close();
+        sc.close();
 
     }
 
-    public static void generarPeorCaso(int t, NodeList listaNodos) {
+    public static void generarPeorCaso(int t, NodeList<Integer> listaNodos) {
         for (int i = 0; i < t; i++) {
             listaNodos.put(t - i);
         }
     }
 
-    public static long insertionSort(NodeList listaNodos) {
+    public static long insertionSort(NodeList<Integer> listaNodos) {
         int key;
         int i;
         long nano_startTime = System.nanoTime();
