@@ -1,5 +1,3 @@
-package Lab04.ejercicio1;
-
 public class NodeList<T> {
     private Node<T> root;
     private int size = 0;
