@@ -36,13 +36,13 @@ public class DoubleNodeList<E> {
     }
 
     public boolean contains(E data) {
-        Node<E> current = head;
+        Node<E> puntero = head;
 
-        while (current != null) {
-            if (current.getData().equals(data)) {
+        while (puntero != null) {
+            if (puntero.getData().equals(data)) {
                 return true;
             }
-            current = current.getNextNode();
+            puntero = puntero.getNextNode();
         }
 
         return false;
