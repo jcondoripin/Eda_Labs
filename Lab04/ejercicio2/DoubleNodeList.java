@@ -34,4 +34,17 @@ public class DoubleNodeList<E> {
             puntero = puntero.getNextNode();
         }
     }
+
+    public boolean contains(E data) {
+        Node<E> current = head;
+
+        while (current != null) {
+            if (current.getData().equals(data)) {
+                return true;
+            }
+            current = current.getNextNode();
+        }
+
+        return false;
+    }
 }
