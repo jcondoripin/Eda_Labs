@@ -11,7 +11,7 @@ public class ejercicio1 {
         System.out.print("Ingresa el tamaño del arreglo: ");
         int n = sc.nextInt();
         ArrayList<NodeList<Integer>> arreglos = new ArrayList<NodeList<Integer>>();
-        for (int i = 0; i < n; i++){ //Imprimira de arriba hacia abajo
+        for (int i = 0; i < n; i++){
             NodeList<Integer> caso = new NodeList<>();
             generarPeorCaso(i, caso);
             arreglos.add(caso);
