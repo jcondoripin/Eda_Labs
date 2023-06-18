@@ -75,4 +75,37 @@ public class DoubleNodeList<E> {
 
         size--;
     }
+
+    public void remove(int position) throws Exception {
+        if (position < 0 || position >= size) {
+            throw new IndexOutOfBoundsException("Posición inválida");
+        }
+
+        if (position == 0) {
+            removeFirst();
+        }
+
+        Node<E> puntero = head;
+        for (int i = 0; i < position; i++) {
+            puntero = puntero.getNextNode();
+        }
+
+        Node<E> prev = puntero.getPreviuosNode();
+        Node<E> next = puntero.getNextNode();
+
+        if (prev != null) {
+            prev.setNextNode(next);
+        }
+
+        if (next != null) {
+            next.setPreviousNode(prev);
+        }
+
+        if (puntero == tail) {
+            tail = prev;
+        }
+
+        size--;
+    }
+
 }
