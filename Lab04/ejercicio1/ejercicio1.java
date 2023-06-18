@@ -8,7 +8,7 @@ public class ejercicio1 {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         PrintWriter archivo = new PrintWriter("insertionTimes.txt");
-        System.out.print("Ingresa el tamaño del arreglo: ");
+        System.out.print("Ingresa el tamaño maximo: ");
         int n = sc.nextInt();
         ArrayList<NodeList<Integer>> arreglos = new ArrayList<NodeList<Integer>>();
         for (int i = 0; i < n; i++){
