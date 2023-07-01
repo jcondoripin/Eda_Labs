@@ -1,10 +1,11 @@
 package Lab05;
 
 import Lab05.Exceptions.NotFoundException;
+import Lab05.Exceptions.ItemDuplicated;
 
 public class AVLTree<T extends Comparable<T>> {
     private NodoAVL<T> root;
-
+	private boolean height;
     public AVLTree(NodoAVL<T> root) {
         this.root = root;
     }
@@ -17,14 +18,70 @@ public class AVLTree<T extends Comparable<T>> {
         return this.root == null;
     }
 
-	NodoAVL<T> leftSon(NodoAVL<T> nodo) {
+	public NodoAVL<T> leftSon(NodoAVL<T> nodo) {
         return nodo.getLeft();
 	}
 
-	NodoAVL<T> rightSon(NodoAVL<T> nodo) {
+	public NodoAVL<T> rightSon(NodoAVL<T> nodo) {
         return nodo.getRight();
 	}
 
+	public void insert(T x) throws ItemDuplicated {
+		this.height = false;
+		this.root = insertRecursive(x, this.root);
+	}
+
+	private NodoAVL<T> insertRecursive(T x, NodoAVL <T> current) throws ItemDuplicated {
+		NodoAVL<T> res = current;
+		if (current == null) {
+			res = new NodoAVL<T>(x);
+			this.height = true;
+		} else {
+			int resC = current.getValue().compareTo(x);
+			if (resC == 0)
+				throw new ItemDuplicated("El dato ya fue insertado antes");
+			if (resC < 0) {
+				res.setRight(insertRecursive(x, rightSon(current))) ;
+				// se recalcula el fb de cada nodo por el que se ha transitado despues de
+				// insertar el nuevo nodo
+				if (this.height) {
+					switch (res.getBf()) {
+						case -1:
+							res.setBf(0);
+							this.height = false;
+							break;
+						case 0:
+							res.setBf(1);
+							this.height = true;
+							break;
+						case 1:
+							res = balanceToLeft(res);
+							this.height = false;
+							break;
+					}
+				}
+			} else {
+				res.setLeft(insertRecursive(x, leftSon(current)));
+				if (this.height) {
+					switch (res.getBf()) {
+						case 1:
+							res.setBf(0);
+							this.height = false;
+							break;
+						case 0:
+							res.setBf(-1);
+							this.height = true;
+							break;
+						case -1:
+							res = balanceToRight(res);
+							this.height = false;
+							break;
+					}
+				}
+			}
+		}
+		return res;
+	}
 
     public void remove(T x) throws NotFoundException {
         this.root = remove(x, this.root);
