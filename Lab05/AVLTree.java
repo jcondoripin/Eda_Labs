@@ -128,6 +128,24 @@ public class AVLTree<T extends Comparable<T>> {
 	            return search(x, node.getLeft());
 	        }
 	}
+
+	   public T getMin() {
+	        if (isEmpty()) {
+	            return null;
+	        }
+	
+	        NodoAVL<T> minNode = findMin(this.root);
+	        return minNode.getValue();
+	    }
+	
+	    private NodoAVL<T> findMin(NodoAVL<T> current) {
+	        if (current.getLeft() == null) {
+	            return current;
+	        }
+	
+	        return findMin(current.getLeft());
+	    }
+
 	private NodoAVL<T> balanceToRight(NodoAVL<T> node){
 		NodoAVL<T> son = node.getLeft();
 		if (son.getBf() == -1){
