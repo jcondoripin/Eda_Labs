@@ -3,13 +3,13 @@ class NodoAVL<T extends Comparable<T>> {
     private T valor;
     private NodoAVL<T> left;
     private NodoAVL<T> right;
-    private int altura;
+    private int bf;
 
     public NodoAVL(T value, NodoAVL<T> left, NodoAVL<T> right) {
         this.left = left;
         this.right = right;
         this.valor = value;
-        this.altura = 0;
+        this.bf = 0;
     }
 
     public NodoAVL(T value) {
@@ -40,12 +40,12 @@ class NodoAVL<T extends Comparable<T>> {
         return this.valor;
     }
 
-    public void setAlt(int alt) {
-        this.altura = alt;
+    public void setBf(int alt) {
+        this.bf = alt;
     }
 
-    public int getAlt() {
-        return this.altura;
+    public int getBf() {
+        return this.bf;
     }
 
 }
