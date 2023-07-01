@@ -206,6 +206,48 @@ public class AVLTree<T extends Comparable<T>> {
 		return node;
 	}
 
+    public T getMax() {
+        if (root == null) {
+            return null; 
+        }
+        
+        NodoAVL<T> current = root;
+        while (current.getRight() != null) {
+            current = current.getRight(); 
+        }
+        
+        return current.getValue(); 
+    }
+
+
+    public T parent(T value) {
+        NodoAVL<T> parentNode = findParentNode(root, value);
+        if (parentNode == null) {
+            return null; 
+        }
+        
+        return parentNode.getValue(); 
+    }
+    
+    private NodoAVL<T> findParentNode(NodoAVL<T> currentNode, T value) {
+        if (currentNode == null || value.compareTo(currentNode.getValue()) == 0) {
+            return null; 
+        }
+        
+        int comparison = value.compareTo(currentNode.getValue());
+        if (comparison < 0) {
+            if (currentNode.getLeft() != null && value.compareTo(currentNode.getLeft().getValue()) == 0) {
+                return currentNode; 
+            }
+            return findParentNode(currentNode.getLeft(), value); 
+        } else {
+            if (currentNode.getRight() != null && value.compareTo(currentNode.getRight().getValue()) == 0) {
+                return currentNode;
+            }
+            return findParentNode(currentNode.getRight(), value); 
+        }
+    }	
+
 	private boolean isLeaf(NodoAVL<T> current) {
 		return current.getLeft() == null && current.getRight() == null;
 	}
