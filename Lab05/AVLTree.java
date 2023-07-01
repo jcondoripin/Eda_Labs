@@ -17,6 +17,15 @@ public class AVLTree<T extends Comparable<T>> {
         return this.root == null;
     }
 
+	NodoAVL<T> leftSon(NodoAVL<T> nodo) {
+        return nodo.getLeft();
+	}
+
+	NodoAVL<T> rightSon(NodoAVL<T> nodo) {
+        return nodo.getRight();
+	}
+
+
     public void remove(T x) throws NotFoundException {
         this.root = remove(x, this.root);
     }
