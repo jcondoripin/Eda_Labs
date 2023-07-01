@@ -113,7 +113,21 @@ public class AVLTree<T extends Comparable<T>> {
 
         return current;
     }
-
+	public NodoAVL<T> search(T x) {
+	        return search(x, root);
+	}
+	
+	private NodoAVL<T> search(T x, NodoAVL<T> node) {
+	        if (node == null || node.getValue().equals(x)) {
+	            return node;
+	        }
+	
+	        if (node.getValue().compareTo(x) < 0) {
+	            return search(x, node.getRight());
+	        } else {
+	            return search(x, node.getLeft());
+	        }
+	}
 	private NodoAVL<T> balanceToRight(NodoAVL<T> node){
 		NodoAVL<T> son = node.getLeft();
 		if (son.getBf() == -1){
