@@ -8,9 +8,17 @@ public class Trie {
         root = new TrieNode();
     }
 
-    // Insertar una palabra en el Trie
+   // Insertar una palabra en el Trie
     public void insert(String palabra) {
-
+        TrieNode current = root;
+        for (char c : palabra.toCharArray()) {
+            int index = c - 'a';
+            if (current.children[index] == null) {
+                current.children[index] = new TrieNode();
+            }
+            current = current.children[index];
+        }
+        current.isEndOfWord = true;
     }
 
     // Buscar si una palabra existe en el Trie
@@ -19,12 +27,12 @@ public class Trie {
         for (char c : palabra.toCharArray()) /*Recorre la palabra descompuesta por el CharArray*/{
             int index = c - 'a'; //Calculando indice, restando valores ASCII 
             if (current.children[index] == null) {
-                return false; //Si hay un nodo que no coincide, la palabra no eiste
+                return false; //Si hay un nodo que es null osea que no esta presente, la palabra no eiste
             }
             current = current.children[index];//Seguimos recorriendo el trie
         }
-        return current.isEndOfWord;/*En caso de que la ultima letra/nodo si sea termino de palabra, se encontró la palabra 
-        Si después de recorrer todos los caracteres de la palabra no llegamos a un nodo final, no se encontro la palabra*/
+        return current.isEndOfWord;/*En caso de que la ultima letra/nodo si sea termino de palabra, se encontró la palabra ,
+        pero si después de recorrer todos los caracteres de la palabra no llegamos a un nodo final, no se encontro la palabra*/
     }
 
     // Reemplazar una palabra vieja por otra nueva
