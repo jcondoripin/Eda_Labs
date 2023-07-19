@@ -8,9 +8,17 @@ public class Trie {
         root = new TrieNode();
     }
 
-    // Insertar una palabra en el Trie
+   // Insertar una palabra en el Trie
     public void insert(String palabra) {
-
+        TrieNode current = root;
+        for (char c : palabra.toCharArray()) {
+            int index = c - 'a';
+            if (current.children[index] == null) {
+                current.children[index] = new TrieNode();
+            }
+            current = current.children[index];
+        }
+        current.isEndOfWord = true;
     }
 
     // Buscar si una palabra existe en el Trie
