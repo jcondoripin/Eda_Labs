@@ -29,8 +29,9 @@ public class Trie {
 
     // Reemplazar una palabra vieja por otra nueva
     public void replace(String palabraVieja, String palabraNueva) {
-
-    }
+        this.delete(palabraVieja);
+        this.insert(palabraNueva);
+    }  
 
     // Elimina una palabra 
     public void delete(String word) {
