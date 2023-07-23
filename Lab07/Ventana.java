@@ -1,5 +1,5 @@
 
-package Lab07;
+package VentanaGUI;
 
 public class Ventana extends javax.swing.JFrame {
 
