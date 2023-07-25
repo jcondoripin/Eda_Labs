@@ -4,11 +4,12 @@ import Lab07.Trie;
 
 public class Ventana extends javax.swing.JFrame {
 
+    private Trie trie;
     public Ventana() {
         initComponents();
         
         setTitle("Find and Replace");
-
+        trie = new Trie();
     }
 
     @SuppressWarnings("unchecked")
