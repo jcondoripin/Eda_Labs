@@ -283,6 +283,7 @@ public class Ventana extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         String wordToInsert = jTextField1.getText();
         jTextArea1.append(wordToInsert + " ");
+        trie.insert(wordToInsert);
     }
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
