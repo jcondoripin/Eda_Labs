@@ -1,5 +1,6 @@
 
 package VentanaGUI;
+import Lab07.Trie;
 
 public class Ventana extends javax.swing.JFrame {
 
