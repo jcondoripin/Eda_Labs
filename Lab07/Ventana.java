@@ -270,6 +270,13 @@ public class Ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    // Obtiene el texto ingresado por el usuario en un campo de texto denominado jTextField1
+    // Y Agrega el texto obtenido al final de un área de texto denominada jTextArea1
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        String wordToInsert = jTextField1.getText();
+        jTextArea1.append(wordToInsert + " ");
+    }
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
