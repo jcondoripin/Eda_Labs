@@ -1,5 +1,3 @@
-package Lab07;
-
 public class TrieNode {
 
     final int ALPHABET_SIZE = 26;

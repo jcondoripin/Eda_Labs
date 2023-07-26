@@ -113,6 +113,7 @@ public class GUITrie extends JFrame {
                 insertWord.setVisible(false);
                 insertText.setVisible(false);
                 buscar.setVisible(false);
+                searchLabel.setVisible(false);
             }
         });
 
@@ -120,6 +121,7 @@ public class GUITrie extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 trie.replace(tf2.getText(), tf.getText());
                 areaTexto.setText(trie.toString());
+
             }
         });
 
@@ -132,6 +134,8 @@ public class GUITrie extends JFrame {
                 insertWord.setVisible(true);
                 insertText.setVisible(true);
                 buscar.setVisible(true);
+                searchLabel.setVisible(true);
+
             }
         });
 

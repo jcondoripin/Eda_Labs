@@ -1,5 +1,3 @@
-package Lab07;
-
 public class Trie {
 
     private TrieNode root;
