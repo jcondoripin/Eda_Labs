@@ -48,8 +48,17 @@ public class GUITrie extends JFrame {
         insertWord.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 trie.insert(tf.getText());
-                System.out.println("Palabra insertada en el Trie");
+                System.out.println("Palabra " + tf.getText() + "insertada en el Trie");
                 areaTexto.setText(trie.toString());
+                tf.setText("");
+            }
+        });
+        insertText.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                trie.insertText(tf.getText());
+                System.out.println("Texto " + tf.getText() + " insertado en el Trie");
+                areaTexto.setText(trie.toString());
+                tf.setText("");
             }
         });
     }
