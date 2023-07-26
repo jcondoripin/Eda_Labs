@@ -83,6 +83,12 @@ public class GUITrie extends JFrame {
                 buscar.setVisible(false);
             }
         });
+        reemplazar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                trie.replace(tf2.getText(), tf.getText());
+                areaTexto.setText(trie.toString());
+            }
+        });
         home.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 label.setText("Introducir texto ");
