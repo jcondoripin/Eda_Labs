@@ -1,4 +1,3 @@
-package Lab07;
 
 import javax.swing.*;
 import java.awt.*;
@@ -109,6 +108,14 @@ public class GUITrie extends JFrame {
                 System.out.println("Texto " + tf.getText() + " insertado en el Trie");
                 areaTexto.setText(trie.toString());
                 tf.setText("");
+            }
+        });
+        reemplazar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                trie.replace(tf2.getText(), tf.getText());
+                areaTexto.setText(trie.toString());
+                tf.setText("");
+                tf2.setText("");
             }
         });
     }
