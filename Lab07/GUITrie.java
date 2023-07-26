@@ -86,6 +86,8 @@ public class GUITrie extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 trie.replace(tf2.getText(), tf.getText());
                 areaTexto.setText(trie.toString());
+                tf.setText("");
+                tf2.setText("");
             }
         });
         home.addActionListener(new ActionListener() {
