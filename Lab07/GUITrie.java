@@ -118,14 +118,6 @@ public class GUITrie extends JFrame {
                 tf.setText("");
             }
         });
-        reemplazar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                trie.replace(tf2.getText(), tf.getText());
-                areaTexto.setText(trie.toString());
-                tf.setText("");
-                tf2.setText("");
-            }
-        });
     }
 
     public static void main(String[] args) {
