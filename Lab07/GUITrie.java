@@ -9,7 +9,7 @@ public class GUITrie extends JFrame {
     private final int ANCHO = 1000;
 
     public GUITrie() {
-        this.setTitle("Trie");
+        this.setTitle("INSERTAR - BUSCAR - REEMPLAZAR");
         this.setSize(ANCHO, ALTO);
         this.setLayout(new BorderLayout(ALLBITS, ABORT));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -27,7 +27,7 @@ public class GUITrie extends JFrame {
         JButton home = new JButton("FIND AND INSERT");
         mb.add(replace);
         mb.add(home);
-
+        JPanel contentTrie = new JPanel();
         JTextArea areaTexto = new JTextArea();
 
         JPanel panel = new JPanel();
@@ -53,9 +53,12 @@ public class GUITrie extends JFrame {
         panel.add(reemplazar);
         panel.add(searchLabel);
 
+        JLabel subt = new JLabel("Contenido del Trie: \n");
+        contentTrie.add(subt);
+        contentTrie.add(areaTexto);
         // Agregar componentes al marco.
         this.add(BorderLayout.NORTH, mb);
-        this.add(BorderLayout.CENTER, areaTexto);
+        this.add(BorderLayout.CENTER, contentTrie);
         this.add(BorderLayout.SOUTH, panel);
         buscar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
